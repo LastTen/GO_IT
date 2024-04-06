@@ -1,3 +1,5 @@
-def get_age(age):
-    return int(age)
-    # your code here
+def reverse_list(l):
+    return list(reversed(l))
+
+
+print(reverse_list([1, 2, 3, 4]))
