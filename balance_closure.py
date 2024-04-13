@@ -1,8 +1,8 @@
-def perents(coin: int) -> int:
+def perents(coin: int):
     """use when user buy something"""
     coin_balans = coin  # Приймає "бюджет"
 
-    def child(lose):
+    def child(lose: int) -> int:
         nonlocal coin_balans  # виклик no local функції
         coin_balans -= lose  # зміна бюджету на lose
         return coin_balans
