@@ -37,7 +37,7 @@ def get_upcoming_birthdays(users, days=7):
 users = [
     {"name": "Sarah Lee", "birthday": "1957.03.30"},
     {"name": "John Doe", "birthday": "1985.03.28"},
-    {"name": "Jane Smith", "birthday": "1990.04.20"},
+    {"name": "Jane Smith", "birthday": "1990.05.20"},
     {"name": "John Doe", "birthday": "1985.01.23"},
 ]
 
