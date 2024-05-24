@@ -15,7 +15,8 @@ class Contacts:
             contacts = []
         self.filename = filename
         self.contacts = contacts
-        self.count_save = 0  # Initialize count_save to 0
+        self.count_save = 0
+        self.is_unpacking = False
 
     def save_to_file(self):
         with open(self.filename, "wb") as file:
@@ -27,12 +28,13 @@ class Contacts:
         return content
 
     def __getstate__(self):
-        state = self.__dict__.copy()  # Copy the instance's state
-        state["count_save"] += 1  # Increment count_save
-        return state
+        attributes = self.__dict__.copy()
+        attributes["count_save"] = attributes["count_save"] + 1
+        return attributes
 
-    # def __setstate__(self, state):
-    #     self.__dict__.update(state)  # Restore the instance's state
+    def __setstate__(self, value):
+        self.__dict__ = value
+        self.is_unpacking = True
 
 
 # Example usage:
