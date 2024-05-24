@@ -1,5 +1,7 @@
 import pickle
 
+some_data = {(1, 3.5): "tuple", 2: [1, 2, 3], "a": {"key": "value"}}
+
 
 def write_contacts_to_file(filename, contacts):
     with open(filename, "wb") as fh:
@@ -9,3 +11,6 @@ def write_contacts_to_file(filename, contacts):
 def read_contacts_from_file(filename):
     with open(filename, "rb") as fh:
         return pickle.load(fh)
+
+
+write_contacts_to_file("data.bin", some_data)
